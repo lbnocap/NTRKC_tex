@@ -1,0 +1,46 @@
+\documentclass[review]{elsarticle}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Cross Matrix with Vectors}
+
+\begin{abstract}
+This is a sample of a cross matrix with matrices, a column vector, and a row vector.
+\end{abstract}
+
+\end{frontmatter}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        % Create matrices
+        \matrix (mat) [matrix of math nodes, left delimiter={[}, right delimiter={]}]
+        {
+            a & b \\
+            c & d \\
+        };
+
+        \matrix (colvec) [right=1cm of mat, matrix of math nodes, left delimiter={[}, right delimiter={]}]
+        {
+            x \\
+            y \\
+        };
+
+        \matrix (rowvec) [below=1cm of mat, matrix of math nodes, left delimiter={[}, right delimiter={]}]
+        {
+            p & q \\
+        };
+
+        % Draw lines to separate them
+        \draw (mat.east) -- (colvec.west);
+        \draw (mat.south) -- (rowvec.north);
+    \end{tikzpicture}
+\end{figure}
+
+\end{document}
