@@ -16,31 +16,29 @@ This is a sample of a cross matrix with matrices, a column vector, and a row vec
 
 \end{frontmatter}
 
-\begin{figure}[h]
-    \centering
-    \begin{tikzpicture}
-        % Create matrices
-        \matrix (mat) [matrix of math nodes, left delimiter={[}, right delimiter={]}]
-        {
-            a & b \\
-            c & d \\
-        };
 
-        \matrix (colvec) [right=1cm of mat, matrix of math nodes, left delimiter={[}, right delimiter={]}]
-        {
-            x \\
-            y \\
-        };
 
-        \matrix (rowvec) [below=1cm of mat, matrix of math nodes, left delimiter={[}, right delimiter={]}]
-        {
-            p & q \\
-        };
 
-        % Draw lines to separate them
-        \draw (mat.east) -- (colvec.west);
-        \draw (mat.south) -- (rowvec.north);
-    \end{tikzpicture}
-\end{figure}
-
+By introducing new coefficients $\tilde{\alpha_{-1}}$ and
+ enhancing the retention of results from previous one-step RKC 
+ calculations, the computational overhead remains almost unchanged 
+ when compared to the two-step RKC method. However, the inclusion 
+ of $\tilde{\alpha_{-1}}$ grants us extra maneuverability for
+  adjusting $\omega_{1}$. Consequently, the coefficients
+   $\eta$, $\omega_{0}$, and $\omega_{1}$ in the NTRKC
+    scheme exhibit slight deviations from those of the 
+    one-step RKC method. In the context of NTRKC, the
+     modulation of the damping parameter $\varepsilon$ 
+     and $\omega_{1}$ serves to shape the stabilizing 
+     domain. Higher values of $\varepsilon$ and $\omega_{1}$ entail a 
+     trade-off between domain width and length, favoring a wider 
+     region at the expense of domain length. Conversely, lower 
+     values of $\varepsilon$ and $\omega_{1}$ lead to a more
+      elongated yet narrower stabilizing domain. Notably, 
+      NTRKC demonstrates superior stabilizing domain
+       characteristics when compared to the two-step RKC method, yielding 
+       heightened numerical accuracy. In the subsequent section 
+       dedicated to stabilizing domain analysis, we will delve further 
+       into this topic, providing insights and presenting two distinct
+        sets of coefficients.
 \end{document}
